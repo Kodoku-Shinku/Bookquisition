@@ -1,0 +1,34 @@
+h1 {
+    font-family: verdana;
+    font-size: 24px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 1.2em;
+    padding:10px;
+}
+p.text {
+    font-family: italic;
+    color: blue;
+}
+
+input[type='text']
+{
+  padding:10px;
+  font-size:1.0em;
+}
+
+input[type='submit']
+{
+  background-color: #28bbc0;
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
+}
