@@ -1,6 +1,6 @@
 package mx.uam.tsis.bookquisition.datos;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -11,5 +11,5 @@ public interface LibroRepository extends CrudRepository<Libro, String>{
 
 	Libro findByTitulo(String Titulo);
 
-	List<Libro> findAll();
+	Collection<Libro> findAll();
 }
