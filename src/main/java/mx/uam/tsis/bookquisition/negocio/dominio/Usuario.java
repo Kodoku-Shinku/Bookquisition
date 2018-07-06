@@ -80,13 +80,7 @@ public class Usuario {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	/**
-	 * Devuelve la contrasena
-	 * @return contrasena
-	 */
-	public String getContrasena() {
-		return contrasena;
-	}
+	
 	/**
 	 * Asigna la contrasena
 	 * @param contrasena
@@ -94,20 +88,6 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-	
-	/**
-	 * Devuelve el nombre de usuario
-	 * @return nombreUsuario
-	 */
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-	/**
-	 * Asigna el nombre
-	 * @param nombreUsuario
-	 */
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
+
 
 }
