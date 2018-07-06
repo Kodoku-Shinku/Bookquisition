@@ -60,4 +60,16 @@ public class LibroRestController {
 	    	}
 	}
     
+    @RequestMapping(value="/libros/{titulo}", method = RequestMethod.DELETE)
+    public ResponseEntity<Usuario> eliminarUsuario(@PathVariable String titulo) {
+	    	
+	    	//Invocar addAlumno en el servicio
+	        boolean retorno = servicioLibro.eliminarLibro(titulo);
+			if(retorno) {
+	    		return new ResponseEntity<Usuario>(HttpStatus.OK);
+	    	} else {
+	    		return new ResponseEntity<Usuario>( HttpStatus.NOT_FOUND);
+	    	}
+	}
+    
 }

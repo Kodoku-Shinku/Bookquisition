@@ -33,7 +33,7 @@ public class LibroService {
 		return true;
 	}
 	
-	public boolean eliminarUsuario(String titulo) {
+	public boolean eliminarLibro(String titulo) {
 		Libro libro = repository.findByTitulo(titulo);
 		if(libro!= null) {
 			repository.delete(libro);
