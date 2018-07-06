@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 public class Usuario {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String nombre;
 	private String correo;
@@ -80,13 +80,34 @@ public class Usuario {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	
+	/**
+	 * Devuelve la contrasena
+	 * @return contrasena
+	 */
+	public String getContrasena() {
+		return contrasena;
+	}
 	/**
 	 * Asigna la contrasena
 	 * @param contrasena
 	 */
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+	
+	/**
+	 * Devuelve el nombre de usuario
+	 * @return nombreUsuario
+	 */
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+	/**
+	 * Asigna el nombre
+	 * @param nombreUsuario
+	 */
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
 }
