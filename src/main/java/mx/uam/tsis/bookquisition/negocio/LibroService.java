@@ -1,6 +1,7 @@
 package mx.uam.tsis.bookquisition.negocio;
 
-import java.util.List;
+import java.util.Collection;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +21,11 @@ public class LibroService {
 	@Autowired
 	private LibroRepository repository;
 	
-	public Libro getLibro(String titulo) {
+	public Libro dameLibro(String titulo) {
 		return repository.findByTitulo(titulo);
 	}
 	
-	public List<Libro> getLibros(){
+	public Collection<Libro> dameLibros(){
 		return repository.findAll();
 	}
 	
