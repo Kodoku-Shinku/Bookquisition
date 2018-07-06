@@ -33,29 +33,35 @@ public class UsuarioService {
 		    Usuario usuarioAux=repository.findByNombreUsuario(usuario.getNombreUsuario());
 		    
 		    if (usuarioAux==null){
-		    	System.out.println(usuario.getNombreUsuario());
-		    	System.out.println("clase usuario servicio");
 		    	repository.save(usuario);
 			    return true;
 		    }else {
-		    	System.out.println(usuarioAux.getNombreUsuario());
-		    	System.out.println("El alumno existe o no se creo exitosamente");
 		    	return false;
 		    }
 		    
 
 	}
 
+	/**
+	 * 
+	 * @return todos los usuarios registrados
+	 */
 	public Collection<Usuario> dameUsuario() {
 		//Recupera a todos los usuario regisgtrados 
 		return repository.findAll();
 	}
 
+	/**
+	 * Regresan el usuario con determinado nombbre de usuario
+	 * @param nombreUsuario
+	 * @return
+	 */
 	public Usuario dameUsuario(String nombreUsuario) {
 		Usuario usuario = repository.findByNombreUsuario(nombreUsuario);
 		return usuario;
 	}
 
+	
 	public boolean eliminarUsuario(String nombreUsuario) {
 		System.out.println("AlumnoService remove");
 	    //recupera al alumno por la matricula independientemente del nombre, puesto que la maatricula es unica
@@ -63,10 +69,9 @@ public class UsuarioService {
 	    if (usuarioAux!=null){
 	    	repository.delete(usuarioAux);
 	    	
-	    	System.out.println("El alumno se borro exitosamente");
 	    	return true;
 	    }else {
-	    	System.out.println("Fallo al eliminar alumno");
+	    	
 	    	return false;
 	    }
 		

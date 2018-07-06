@@ -1,5 +1,6 @@
 package mx.uam.tsis.bookquisition.servicios;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class LibroRestController {
 	 *  Metodo para obtener todos los Libros
 	 */
     @RequestMapping(value="/libros", method=RequestMethod.GET)
-    public List<Libro> dameUsuarios() {
-        return servicioLibro.getLibros();
+    public Collection<Libro> dameLibros() {
+        return servicioLibro.dameLibros();
     }
     
     /**
@@ -42,33 +43,33 @@ public class LibroRestController {
      * @return Libro
      */
     @RequestMapping(value="/libros/{titulo}", method=RequestMethod.GET)
-    public Libro buscaAlumno(@PathVariable String titulo) {
-        Libro libro = servicioLibro.getLibro(titulo);
+    public Libro dameLibro(@PathVariable String titulo) {
+        Libro libro = servicioLibro.dameLibro(titulo);
        	return libro;
     }
     
     
     @RequestMapping(value="/libros", method = RequestMethod.POST)
-	public ResponseEntity<Libro> agregarUsuario(@RequestBody Libro libro) {
+	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro) {
 	    	
-	    	//Invocar addAlumno en el servicio
-	        boolean retorno = servicioLibro.agregarLibro(libro);
-			if(retorno) {
-	    		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
-	    	} else {
-	    		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
-	    	}
+    	//Invocar addAlumno en el servicio
+        boolean retorno = servicioLibro.agregarLibro(libro);
+		if(retorno) {
+    		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
+    	} else {
+    		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
+    	}
 	}
     
     @RequestMapping(value="/libros/{titulo}", method = RequestMethod.DELETE)
-    public ResponseEntity<Usuario> eliminarUsuario(@PathVariable String titulo) {
+    public ResponseEntity<Libro> eliminarLibro(@PathVariable String titulo) {
 	    	
 	    	//Invocar addAlumno en el servicio
 	        boolean retorno = servicioLibro.eliminarLibro(titulo);
 			if(retorno) {
-	    		return new ResponseEntity<Usuario>(HttpStatus.OK);
+	    		return new ResponseEntity<Libro>(HttpStatus.OK);
 	    	} else {
-	    		return new ResponseEntity<Usuario>( HttpStatus.NOT_FOUND);
+	    		return new ResponseEntity<Libro>( HttpStatus.NOT_FOUND);
 	    	}
 	}
     
