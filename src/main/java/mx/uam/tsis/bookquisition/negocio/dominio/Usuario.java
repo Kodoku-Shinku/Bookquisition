@@ -11,9 +11,8 @@ import javax.persistence.Id;
  */
 @Entity
 public class Usuario {
-	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String nombre;
 	private String correo;
@@ -23,6 +22,7 @@ public class Usuario {
 	/**
 	 * Constructor por default
 	 */
+	
 	public Usuario() {
 	}
 	
@@ -30,9 +30,17 @@ public class Usuario {
 		this.nombre = nombre;
 		this.correo = correo;
 		this.contrasena = contrasena;
-		this.nombreUsuario = nombreUsuario;
+		this.nombreUsuario=nombreUsuario;
 	}
 	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
 	/**
 	 * Devuelve el nombre
 	 * @return nombre
@@ -40,13 +48,7 @@ public class Usuario {
 	public String getNombre() {
 		return nombre;
 	}
-	/**
-	 * Asigna el nombre
-	 * @param nombre
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	/**
 	 * Devuelve el correo
 	 * @return correo
@@ -54,6 +56,23 @@ public class Usuario {
 	public String getCorreo() {
 		return correo;
 	}
+	
+	/**
+	 * Devuelve la contrasena
+	 * @return contrasena
+	 */
+	public String getContrasena() {
+		return contrasena;
+	}
+	
+	/**
+	 * Asigna el nombre
+	 * @param nombre
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	/**
 	 * Asigna el correo
 	 * @param correo

@@ -1,6 +1,7 @@
 package mx.uam.tsis.bookquisition.negocio;
 
 import java.util.Collection;
+import java.util.List;
 
 import mx.uam.tsis.bookquisition.datos.UsuarioDAO;
 import mx.uam.tsis.bookquisition.datos.UsuarioRepository;

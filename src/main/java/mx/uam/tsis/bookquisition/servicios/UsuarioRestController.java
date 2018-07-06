@@ -1,6 +1,7 @@
 package mx.uam.tsis.bookquisition.servicios;
 
 import java.util.Collection;
+import java.util.List;
 
 import mx.uam.tsis.bookquisition.negocio.UsuarioService;
 import mx.uam.tsis.bookquisition.negocio.dominio.Usuario;
@@ -25,20 +26,22 @@ public class UsuarioRestController {
 	
 	@Autowired
 	private UsuarioService servicioUsuario;
-	
-	@RequestMapping(value="/usuarios", method = RequestMethod.POST)
-    public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {
-        System.out.println("metodo post");
-        //Invocar addAlumno en el servicio
-        System.out.println(usuario.getNombreUsuario());
-        boolean retorno = servicioUsuario.agregarUsuario(usuario);
-        if(retorno) {
-        	
-            return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED);
-        } else {
-            return new ResponseEntity<Usuario>(usuario, HttpStatus.BAD_REQUEST);
-        }
-    }
+    
+    
+  @RequestMapping(value="/usuarios", method = RequestMethod.POST)
+	public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {
+	    	
+	    	//Invocar addAlumno en el servicio
+	        boolean retorno = servicioUsuario.agregarUsuario(usuario);
+			if(retorno) {
+	    		return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED);
+	    	} else {
+	    		return new ResponseEntity<Usuario>(usuario, HttpStatus.BAD_REQUEST);
+	    	}
+	}
+    
+   
+
 	
 	/**
 	 *  Metodo para obtener todos los usuario 

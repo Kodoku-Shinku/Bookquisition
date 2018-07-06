@@ -1,14 +1,26 @@
 package mx.uam.tsis.bookquisition.negocio.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Entidad del modelo de dominio
  * 
  */
+@Entity
 public class Libro {
-	private int id;
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
 	private String titulo;
+	
 	private String autor;
+	
 	private String descripcion;
+	
 	private String genero;
 	
 	/**
@@ -17,19 +29,11 @@ public class Libro {
 	public Libro() {
 	}
 
-	public Libro(int id, String titulo, String autor, String descripcion, String genero) {
-		this.id = id;
+	public Libro(String titulo, String autor, String descripcion, String genero) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.descripcion = descripcion;
 		this.genero = genero;
-	}
-	/**
-	 * Devuelve el id
-	 * @return id
-	 */
-	public int getId() {
-		return id;
 	}
 	/**
 	 * Devuelve el titulo del libro
@@ -58,13 +62,6 @@ public class Libro {
 	 */
 	public String getGenero() {
 		return genero;
-	}
-	/**
-	 * Asigna el id del libro
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 	/**
 	 * Asigna el titulo del libro
