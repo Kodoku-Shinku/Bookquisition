@@ -126,23 +126,28 @@
 
                   <div class="md-form">
                     <i class="fa  prefix grey-text"></i>
-                    <input type="text" id="form3" class="form-control">
-                    <label for="form3">nombre</label>
+                    <input type="text" id="nombre" class="form-control">
+                    <label for="nombre">nombre</label>
                   </div>
                   <div class="md-form">
                     <i class="fa  prefix grey-text"></i>
-                    <input type="text" id="form3" class="form-control">
-                    <label for="form3">Apellidos</label>
+                    <input type="text" id="apellidos" class="form-control">
+                    <label for="apellidos">Apellidos</label>
                   </div>
                   <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="form3" class="form-control">
-                    <label for="form3">Usuario</label>
+                    <input type="text" id="usuario" class="form-control">
+                    <label for="usuario">Usuario</label>
                   </div>
                   <div class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="email" id="form2" class="form-control">
-                    <label for="form2">email</label>
+                    <input type="email" id="email" class="form-control">
+                    <label for="email">Email</label>
+                  </div>
+                   <div class="md-form">
+                    <i class="fa fa-pencil prefix grey-text"></i>
+                    <input type="password" id="contrasena" class="form-control">
+                    <label for="contrasena">Contraseña</label>
                   </div>
 
                   <div class="md-form">
@@ -420,6 +425,39 @@
 
 
   <!-- SCRIPTS -->
+  
+  <script>
+      function agregaAlumno(){
+    	  var nombre;
+    	  var ;
+    	  nombre = document.getElementById("nombre").value;
+    	  matricula = document.getElementById("matricula").value;
+
+    	  if (isNaN(matricula) || matricula < 1 || matricula > 1000) {
+    	    	document.getElementById("nombre").innerHTML = "Valor de matricula fuera de rango";
+    	    } else {
+
+    	    	var xmlhttp = new XMLHttpRequest();
+    		    xmlhttp.onreadystatechange = function() {
+    		    	alert("Ready State: "+this.readyState+" status: "+this.status);
+    	    	    if (this.readyState == 4 && this.status == 200) {
+    	    	    	// Ya se recibio el resultado de la invocacion asincorna
+    	        	    //var alumno = JSON.parse(this.responseText);
+
+    	            	document.getElementById("info").innerHTML = "Se agrego al alumno:"+alumno.nombre;
+
+    	        	} else {
+    	        		alert("Response text: "+this.responseText);
+    	        		alert("Ready State (else): "+this.readyState+" status(else): "+this.status);
+    	        		document.getElementById("info").innerHTML = "El alumno ya existe";
+    	        	}
+    	    	};
+    	    	xmlhttp.open("POST", "/alumnos", true);
+    	    	xmlhttp.setRequestHeader('Content-type','application/json');
+    	    	xmlhttp.send(JSON.stringify({nombre:nombre,matricula:matricula}));
+    	    }
+      }
+      </script>
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->
