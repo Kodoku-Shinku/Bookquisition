@@ -15,9 +15,11 @@ public class Usuario {
   @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String nombre;
+	private String apellido;
 	private String correo;
 	private String contrasena;
 	private String nombreUsuario;
+	private String pais;
 	
 	/**
 	 * Constructor por default
@@ -26,11 +28,12 @@ public class Usuario {
 	public Usuario() {
 	}
 	
-	public Usuario(String nombre, String correo, String contrasena, String nombreUsuario) {
+	public Usuario(String nombre,String apellido, String correo, String contrasena, String nombreUsuario, String pais) {
 		this.nombre = nombre;
 		this.correo = correo;
 		this.contrasena = contrasena;
 		this.nombreUsuario=nombreUsuario;
+		this.pais = pais;
 	}
 	
 	public String getNombreUsuario() {
@@ -87,6 +90,14 @@ public class Usuario {
 	 */
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+	
+	public String getPais() {
+		return this.pais;
+	}
+	
+	public void setPais (String pais) {
+		this.pais = pais;
 	}
 
 
