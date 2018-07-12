@@ -116,8 +116,7 @@
               <!--Card content-->
               <div class="card-body">
 
-                <!-- Form -->
-                <form name="">
+                <!-- Formulario -->
                   <!-- Heading -->
                   <h3 class="dark-grey-text text-center">
                     <strong>Crea tu cuenta</strong>
@@ -391,7 +390,7 @@
                     </div>
 
                   <div class="text-center">
-                    <button class="btn btn-purple">Registrate</button>
+                    <button type="submit" onclick="agregaUsuario()" class="btn btn-purple">Registrate</button>
                     <hr>
                     <fieldset class="form-check">
                       <input type="checkbox" class="form-check-input" id="checkbox1">
@@ -399,7 +398,7 @@
                     </fieldset>
                   </div>
 
-                </form>
+                
                 <!-- Form -->
 
               </div>
@@ -426,38 +425,6 @@
 
   <!-- SCRIPTS -->
   
-  <script>
-      function agregaAlumno(){
-    	  var nombre;
-    	  var ;
-    	  nombre = document.getElementById("nombre").value;
-    	  matricula = document.getElementById("matricula").value;
-
-    	  if (isNaN(matricula) || matricula < 1 || matricula > 1000) {
-    	    	document.getElementById("nombre").innerHTML = "Valor de matricula fuera de rango";
-    	    } else {
-
-    	    	var xmlhttp = new XMLHttpRequest();
-    		    xmlhttp.onreadystatechange = function() {
-    		    	alert("Ready State: "+this.readyState+" status: "+this.status);
-    	    	    if (this.readyState == 4 && this.status == 200) {
-    	    	    	// Ya se recibio el resultado de la invocacion asincorna
-    	        	    //var alumno = JSON.parse(this.responseText);
-
-    	            	document.getElementById("info").innerHTML = "Se agrego al alumno:"+alumno.nombre;
-
-    	        	} else {
-    	        		alert("Response text: "+this.responseText);
-    	        		alert("Ready State (else): "+this.readyState+" status(else): "+this.status);
-    	        		document.getElementById("info").innerHTML = "El alumno ya existe";
-    	        	}
-    	    	};
-    	    	xmlhttp.open("POST", "/alumnos", true);
-    	    	xmlhttp.setRequestHeader('Content-type','application/json');
-    	    	xmlhttp.send(JSON.stringify({nombre:nombre,matricula:matricula}));
-    	    }
-      }
-      </script>
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -471,6 +438,32 @@
     // Animations initialization
     new WOW().init();
   </script>
+  
+  <script>
+      function agregaUsuario(){
+    	  console.log("Entre a la funcion");
+    	  var nombre;
+    	  var apellidos;
+    	  var nombreUsuario;
+    	  var email;
+    	  var contrasena;
+    	  var pais;
+    	  
+    	  nombre = document.getElementById("nombre").value;
+    	  apellidos = document.getElementById("apellidos").value;
+    	  nombreUsuario = document.getElementById("usuario").value;
+    	  email = document.getElementById("email").value;
+    	  contrasena = document.getElementById("contrasena").value;
+    	  pais = document.getElementById("nombre").value;
+
+
+    	    	var xmlhttp = new XMLHttpRequest();
+    	    	xmlhttp.open("POST", "/usuarios", true);
+    	    	xmlhttp.setRequestHeader('Content-type','application/json');
+    	    	xmlhttp.send(JSON.stringify({nombre:nombre,apellido:apellidos,correo:email,contrasena:contrasena,nombreUsuario:nombreUsuario,pais:pais}));
+    	    	    	    	
+    	    }
+      </script>
 </body>
 
 </html>
