@@ -395,7 +395,7 @@
                     <hr>
                     <fieldset class="form-check">
                       <input type="checkbox" class="form-check-input" id="checkbox1">
-                      <label for="checkbox1" class="form-check-label dark-grey-text">Acepto condiciones</label>
+                      <label for="checkbox1" class="form-check-label dark-grey-text">Acepto terminos y condiciones</label>
                     </fieldset>
                   </div>
 
@@ -429,12 +429,20 @@
   <script>
       function agregaAlumno(){
     	  var nombre;
-    	  var ;
+    	  var apellidos;
+    	  var usuario;
+    	  var email;
+    	  var contrasena;
+    	  var pais;
     	  nombre = document.getElementById("nombre").value;
-    	  matricula = document.getElementById("matricula").value;
+    	  apellidos = document.getElementById("apellidos").value;
+    	  usuario = document.getElementById("usuario").value;
+    	  email = document.getElementById("email").value;
+    	  contrasena = document.getElementById("contrasena").value;
+    	  
 
-    	  if (isNaN(matricula) || matricula < 1 || matricula > 1000) {
-    	    	document.getElementById("nombre").innerHTML = "Valor de matricula fuera de rango";
+    	  if (isNaN(contrasena) || contrasena < 8) {
+    	    	document.getElementById("nombre").innerHTML = "La contraseña debe de tener al menos 8 caracteres";
     	    } else {
 
     	    	var xmlhttp = new XMLHttpRequest();
@@ -444,17 +452,18 @@
     	    	    	// Ya se recibio el resultado de la invocacion asincorna
     	        	    //var alumno = JSON.parse(this.responseText);
 
-    	            	document.getElementById("info").innerHTML = "Se agrego al alumno:"+alumno.nombre;
+    	            	//document.getElementById("info").innerHTML = "Se agrego al alumno:"+alumno.nombre;
+    	            	alert("Te has registrado correctamente!");
 
     	        	} else {
     	        		alert("Response text: "+this.responseText);
     	        		alert("Ready State (else): "+this.readyState+" status(else): "+this.status);
-    	        		document.getElementById("info").innerHTML = "El alumno ya existe";
+    	        		document.getElementById("info").innerHTML = "";
     	        	}
     	    	};
-    	    	xmlhttp.open("POST", "/alumnos", true);
+    	    	xmlhttp.open("POST", "/usuarios", true);
     	    	xmlhttp.setRequestHeader('Content-type','application/json');
-    	    	xmlhttp.send(JSON.stringify({nombre:nombre,matricula:matricula}));
+    	    	xmlhttp.send(JSON.stringify({nombre:nombre,nombreUsuario:usuario,correo:email,contrasena:contrasena}));
     	    }
       }
       </script>
