@@ -116,8 +116,6 @@
             <!--Card content-->
             <div class="card-body">
 
-              <!-- Form -->
-              <form name="">
                 <!-- Heading -->
                 <h3 class="dark-grey-text text-center">
                   <strong>Crea tu cuenta</strong>
@@ -151,7 +149,7 @@
                 </div>
 
                 <div class="md-form">
-                  <select name="pais">
+                  <select name="pais" id="pais">
                     <option value="select"selected>Selecciona tu pais</option>
                     <option value="AF">Afganistán</option>
                     <option value="AL">Albania</option>
@@ -396,11 +394,9 @@
                     <label for="checkbox1" class="form-check-label dark-grey-text">Acepto terminos y condiciones</label>
                   </fieldset>
                   <hr>
-                  <button class="btn btn-purple">Registrate</button>
+                  <button type="submit" onclick="agregaUsuario()" class="btn btn-purple">Registrate</button>
                 </div>
 
-              </form>
-              <!-- Form -->
 
             </div>
 
@@ -425,48 +421,6 @@
 
 
 <!-- SCRIPTS -->
-
-<script>
-function agregaAlumno(){
-  var nombre;
-  var apellidos;
-  var usuario;
-  var email;
-  var contrasena;
-  var pais;
-  nombre = document.getElementById("nombre").value;
-  apellidos = document.getElementById("apellidos").value;
-  usuario = document.getElementById("usuario").value;
-  email = document.getElementById("email").value;
-  contrasena = document.getElementById("contrasena").value;
-
-
-  if (isNaN(contrasena) || contrasena < 8) {
-    document.getElementById("nombre").innerHTML = "La contraseña debe de tener al menos 8 caracteres";
-  } else {
-
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      alert("Ready State: "+this.readyState+" status: "+this.status);
-      if (this.readyState == 4 && this.status == 200) {
-        // Ya se recibio el resultado de la invocacion asincorna
-        //var alumno = JSON.parse(this.responseText);
-
-        //document.getElementById("info").innerHTML = "Se agrego al alumno:"+alumno.nombre;
-        alert("Te has registrado correctamente!");
-
-      } else {
-        alert("Response text: "+this.responseText);
-        alert("Ready State (else): "+this.readyState+" status(else): "+this.status);
-        document.getElementById("info").innerHTML = "";
-      }
-    };
-    xmlhttp.open("POST", "/usuarios", true);
-    xmlhttp.setRequestHeader('Content-type','application/json');
-    xmlhttp.send(JSON.stringify({nombre:nombre,nombreUsuario:usuario,correo:email,contrasena:contrasena}));
-  }
-}
-</script>
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <!-- Bootstrap tooltips -->
@@ -480,6 +434,34 @@ function agregaAlumno(){
 // Animations initialization
 new WOW().init();
 </script>
+<script>
+      function agregaUsuario(){
+    	  console.log("Entre a la funcion");
+    	  var nombre;
+    	  var apellidos;
+    	  var nombreUsuario;
+    	  var email;
+    	  var contrasena;
+    	  var seleccionado;
+    	  var pais;
+    	  
+    	  nombre = document.getElementById("nombre").value;
+    	  apellidos = document.getElementById("apellidos").value;
+    	  nombreUsuario = document.getElementById("usuario").value;
+    	  email = document.getElementById("email").value;
+    	  contrasena = document.getElementById("contrasena").value;
+    	  
+    	  seleccionado = document.getElementById("pais");
+    	  pais = seleccionado.options[seleccionado.selectedIndex].text;
+
+
+    	    	var xmlhttp = new XMLHttpRequest();
+    	    	xmlhttp.open("POST", "/usuarios", true);
+    	    	xmlhttp.setRequestHeader('Content-type','application/json');
+    	    	xmlhttp.send(JSON.stringify({nombre:nombre,apellido:apellidos,correo:email,contrasena:contrasena,nombreUsuario:nombreUsuario,pais:pais}));
+    	    	    	    	
+    	    }
+      </script>
 </body>
 
 </html>
