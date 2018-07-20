@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.uam.tsis.bookquisition.negocio.LibroService;
@@ -20,6 +21,7 @@ import mx.uam.tsis.bookquisition.negocio.dominio.Usuario;
  * Controlador para el API rest
  * 
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class LibroRestController {
 
