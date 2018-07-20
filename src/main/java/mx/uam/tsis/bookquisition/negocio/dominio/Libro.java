@@ -23,17 +23,35 @@ public class Libro {
 	
 	private String genero;
 	
+	private String imagen;
+	
 	/**
 	 * Constructor por default
 	 */
 	public Libro() {
 	}
 
-	public Libro(String titulo, String autor, String descripcion, String genero) {
+	public Libro(String titulo, String autor, String descripcion, String genero, String imagen) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.descripcion = descripcion;
 		this.genero = genero;
+		this.imagen = imagen ;
+	}
+	
+	/**
+	 * Devuelve el Uri de la imagen del libro
+	 * @return Uri de la imagen
+	 */
+	public String getImagen() {
+		return imagen;
+	}
+	/**
+	 * Asigna el Uri de la imagen  del libro
+	 * @param Uri
+	 */
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	/**
 	 * Devuelve el titulo del libro
@@ -42,6 +60,8 @@ public class Libro {
 	public String getTitulo() {
 		return titulo;
 	}
+	
+
 	/**
 	 * Devuelve el autor del libro
 	 * @return autor
