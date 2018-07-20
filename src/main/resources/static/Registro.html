@@ -390,11 +390,11 @@
 
                 <div class="text-center">
                   <fieldset class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox1">
+                    <input type="checkbox"  name="cyt" class="form-check-input" id="checkbox1" value="ON" onClick="deshabilita()">
                     <label for="checkbox1" class="form-check-label dark-grey-text">Acepto terminos y condiciones</label>
                   </fieldset>
                   <hr>
-                  <button type="submit" onclick="agregaUsuario()" class="btn btn-purple">Registrate</button>
+                  <input type="submit" id="regis" onclick="agregaUsuario()" class="btn btn-purple" value="Registrate">
                 </div>
 
 
@@ -421,6 +421,7 @@
 
 
 <!-- SCRIPTS -->
+
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <!-- Bootstrap tooltips -->
@@ -444,13 +445,13 @@ new WOW().init();
     	  var contrasena;
     	  var seleccionado;
     	  var pais;
-    	  
+
     	  nombre = document.getElementById("nombre").value;
     	  apellidos = document.getElementById("apellidos").value;
     	  nombreUsuario = document.getElementById("usuario").value;
     	  email = document.getElementById("email").value;
     	  contrasena = document.getElementById("contrasena").value;
-    	  
+
     	  seleccionado = document.getElementById("pais");
     	  pais = seleccionado.options[seleccionado.selectedIndex].text;
 
@@ -459,8 +460,17 @@ new WOW().init();
     	    	xmlhttp.open("POST", "/usuarios", true);
     	    	xmlhttp.setRequestHeader('Content-type','application/json');
     	    	xmlhttp.send(JSON.stringify({nombre:nombre,apellido:apellidos,correo:email,contrasena:contrasena,nombreUsuario:nombreUsuario,pais:pais}));
-    	    	    	    	
+
     	    }
+          function deshabilita(){
+            var x = document.getElementById('checkbox1').checked;
+            console.log(x);
+              if(document.getElementById('checkbox1').checked){
+                  document.getElementById('regis').disabled=false;
+              }else{
+                  document.getElementById('regis').disabled=true;
+              }
+          }
       </script>
 </body>
 
