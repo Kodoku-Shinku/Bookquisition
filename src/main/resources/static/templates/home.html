@@ -1,0 +1,33 @@
+<div class="container">
+		<div class="list-books" >
+            <!-- Section-->
+            <section class="text-center my-5">
+              <!-- Grid row -->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-6 mb-md-0 mb-4" ng-repeat="book in posts">
+
+                  <!-- Featured image -->
+                  <div class="view overlay rounded z-depth-2 mb-4">
+                    <img class="img-fluid" src="https://img1.od-cdn.com/ImageType-400/0111-1/B0B/FCF/71/%7BB0BFCF71-CE6D-4CA8-BC31-8EFC004F2772%7DImg400.jpg" alt="Sample image">
+                  </div>
+
+                  <!-- Category -->
+                  <a href="#" class="deep-orange-text"><h6 class="font-weight-bold mb-3"><i class="fa fa-graduation-cap pr-2"></i>Education</h6></a>
+                  <!-- Post title -->
+                  <h4 class="font-weight-bold mb-3"><strong>{{book.titulo}}</strong></h4>
+                  <!-- Post data -->
+                  <p>by <a class="font-weight-bold">{{book.autor}}</a>, 13/07/2018</p>
+                  <!-- Excerpt -->
+                  <p class="dark-grey-text">{{book.descripcion}}</p>
+                  <!-- Read more button -->
+                  <a class="btn btn-deep-orange btn-rounded btn-md">Solicitar</a>
+
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </section>
+            <!-- Section -->
+        </div>	
+</div>

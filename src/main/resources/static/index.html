@@ -40,6 +40,16 @@
       background-color: #9933CC;
     }
   </style>
+
+<!--
+START LOGIN DANIEL GMAIL
+-->
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+   <meta name="google-signin-client_id" content="1069883673015-62kc46mpgc1djpd32fo6phncah7invh5.apps.googleusercontent.com">
+<!--
+END LOGIN DANIEL GMAIL
+-->
+  
 </head>
 
 <body>
@@ -129,10 +139,10 @@
           </li>
           <span class="navbar-toggler-icon"></span>
           <li class="nav-item">
-            <a href="https://www.google.com/" class="btn btn-red rounded" target="_blank">
-              <i class="fa fa-google-plus"></i>   Google
-            </a>
-          </li>
+
+           <i><div class="g-signin2" data-onsuccess="iniciarSesion" id="botonSesion"></div></i>
+
+            </li>
           <span class="navbar-toggler-icon"></span>
           <li class="nav-item">
             <a class="twitter-follow-button" href="https://twitter.com/XchangeBook" data-show-screen-name="false" data-size="large" style="vertical-align: bottom;">Follow @XchangeBook<i class="fa fa-twitter"></i> Twitter</a>
@@ -150,6 +160,53 @@
     <!-- Mask & flexbox options-->
   </div>
   <!-- Full Page Intro -->
+  
+  
+   
+<!--
+START LOGIN DANIEL GMAIL
+   <div class="g-signin2" data-onsuccess="iniciarSesion" id="botonSesion"></div>
+ -->
+      
+      <img id="foto"><br>
+      <p id="nombre"></p>
+      <div id="estado"></div>
+      
+   <script type="text/javascript">
+     function iniciarSesion(googleUser) {	   
+    	  var perfil = googleUser.getBasicProfile();
+	      var foto = perfil.getImageUrl();
+	      var nombre = perfil.getName();
+	      var email = perfil.getEmail();
+	      
+	      document.getElementById("foto").src = foto;
+	      document.getElementById("nombre").innerHTML = nombre;
+	      document.getElementById("botonSesion").style.visibility = "hidden";
+	      document.getElementById("estado").innerHTML 
+	      = 'Bienvenido '+nombre+'! <br> <a href=bookInicio.html/>Continuar con sesion de Google</a><br>'
+         
+         window.location.replace("/bookInicio.html");
+     }
+   </script>
+
+<!--   <button onclick="cerrarSesion()">Sign Out</button>
+  
+   
+   <script>
+      function cerrarSesion() {
+      		gapi.auth2.getAuthInstance().disconnect();
+      		
+      		location.reload();
+   		}
+   </script>
+ -->
+
+<!--
+END LOGIN DANIEL GMAIL
+-->
+ 
+  
+  
   <!--Main layout-->
   <main>
     <div class="container">
