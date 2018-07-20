@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Agregar Libro</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="grey lighten-3">
+
+
+
+    <!--Main layout-->
+    <main class="mt-5 pt-5" background-image="">
+        <div class="container">
+          <!--Reply-->
+          <div class="card mb-3 wow fadeIn">
+
+              <div class="card-body">
+
+                   <!-- Form -->
+                <form name="">
+
+                  <!--Reply-->
+
+				<label class="form-control card-header font-weight-bold text-center"> <strong>AGREGAR LIBRO</strong></label>
+				  <hr>
+
+                  <!-- Titulo -->
+                      <label for="titulo">Titulo</label>
+                      <input type="text" id="titulo" class="form-control">
+
+                      <br>
+
+                      <!-- Autor -->
+                      <label for="autor">Autor</label>
+                      <input type="text" id="autor" class="form-control">
+
+					  <br>
+
+					  <!--Genero-->
+                      <label for="autor">Género</label>
+                      <input type="text" id="genero" class="form-control">
+
+						<br>
+                      <!-- Descripcion -->
+                      <div class="form-group">
+                          <label for="descripcion">Descripción</label>
+                          <textarea class="form-control" id="descripcion" rows="5"></textarea>
+                      </div>
+                      <!--subir una imagen ..........................................-->
+                      <form enctype="multipart/form-data" action="uploader1.php" method="POST">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
+                        <input name="uploadedfile" type="file" onchange="cargarImagen(files[0])"/>
+                        <label  id ="#singleFileUploadError"></label>
+                        <label  id ="#singleFileUploadSuccess"></label>
+                      </form>
+                      <div id="form"></div>
+                      
+                     
+
+
+
+                      <div class="text-center mt-4">
+                          <button class="btn btn-primary" onclick="subirLibro()">Subir libro</button>
+                      </div>
+
+                
+                <!-- Form -->
+
+
+
+              </div>
+          </div>
+          <!--/.Reply-->
+
+
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+    
+<script>
+	
+	
+  var response
+  function cargarImagen(file) {
+     var formData = new FormData();
+    formData.append("file", file);
+    console.log(file);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/uploadFile");
+
+    xhr.onload = function() {
+        console.log(xhr.responseText);
+        response = JSON.parse(xhr.responseText);
+        console.log(response);
+        if(xhr.status == 200) {
+        	
+        	document.getElementById('#singleFileUploadSuccess').innerHTML = "Imagen cargada correctamente <img src='" + response.fileDownloadUri + "' height='100' width='75'>";
+        	
+        } else {
+        	
+            document.getElementById('#singleFileUploadError').innerHTML = (response && response.message) || "Some Error Occurred";
+        }
+    }
+
+      xhr.send(formData);
+  }
+  
+  function subirLibro(){
+  	
+      
+  	var titulo=document.getElementById("titulo").value;
+  	var autor=document.getElementById("autor").value;
+  	var descripcion=document.getElementById("descripcion").value;
+  	var genero=document.getElementById("genero").value;
+  	 
+  	location.href = "/agregarLibro.html"; 
+  
+  	var libro={titulo: titulo, autor:autor, descripcion:descripcion, genero: genero, imagen:response.fileDownloadUri};
+      	
+  	var xmlhttp = new XMLHttpRequest();
+		
+	xmlhttp.open("POST", "/libros", true);
+	xmlhttp.setRequestHeader('Content-type', 'application/json; charset= utf-8');
+	xmlhttp.send(JSON.stringify(libro));  
+	//location.reload(true);
+	
+  }
+</script>
+</body>
+
+</html>
