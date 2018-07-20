@@ -23,7 +23,7 @@ public class Libro {
 	
 	private String genero;
 	
-	private String imagen;
+	private String imagen; 
 	
 	/**
 	 * Constructor por default
