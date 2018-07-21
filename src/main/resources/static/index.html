@@ -49,7 +49,7 @@ START LOGIN DANIEL GMAIL
 <!--
 END LOGIN DANIEL GMAIL
 -->
-  
+
 </head>
 
 <body>
@@ -110,7 +110,7 @@ END LOGIN DANIEL GMAIL
             </a>
           </li>
           <li>
-            <button class="button button-1" type="submit">Iniciar Sesion</button>
+            <button type="button" onclick=" location.href='iniciarSesion.html' " class="button button-1" type="submit">Iniciar Sesión</button>
           </li>
         </ul>
       </div>
@@ -160,42 +160,42 @@ END LOGIN DANIEL GMAIL
     <!-- Mask & flexbox options-->
   </div>
   <!-- Full Page Intro -->
-  
-  
-   
+
+
+
 <!--
 START LOGIN DANIEL GMAIL
    <div class="g-signin2" data-onsuccess="iniciarSesion" id="botonSesion"></div>
  -->
-      
+
       <img id="foto"><br>
       <p id="nombre"></p>
       <div id="estado"></div>
-      
+
    <script type="text/javascript">
-     function iniciarSesion(googleUser) {	   
+     function iniciarSesion(googleUser) {
     	  var perfil = googleUser.getBasicProfile();
 	      var foto = perfil.getImageUrl();
 	      var nombre = perfil.getName();
 	      var email = perfil.getEmail();
-	      
+
 	      document.getElementById("foto").src = foto;
 	      document.getElementById("nombre").innerHTML = nombre;
 	      document.getElementById("botonSesion").style.visibility = "hidden";
-	      document.getElementById("estado").innerHTML 
+	      document.getElementById("estado").innerHTML
 	      = 'Bienvenido '+nombre+'! <br> <a href=bookInicio.html/>Continuar con sesion de Google</a><br>'
-         
+
          window.location.replace("/bookInicio.html");
      }
    </script>
 
 <!--   <button onclick="cerrarSesion()">Sign Out</button>
-  
-   
+
+
    <script>
       function cerrarSesion() {
       		gapi.auth2.getAuthInstance().disconnect();
-      		
+
       		location.reload();
    		}
    </script>
@@ -204,9 +204,9 @@ START LOGIN DANIEL GMAIL
 <!--
 END LOGIN DANIEL GMAIL
 -->
- 
-  
-  
+
+
+
   <!--Main layout-->
   <main>
     <div class="container">
