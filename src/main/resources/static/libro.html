@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+        <div class="container">
+
+            <hr class="my-4">
+
+            <!--Section: Cards-->
+            <section class="text-center">
+
+                <!--Grid row-->
+                <div class="row ">
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4" ng-repeat="book in posts">
+                      <!--Card-->
+                      <div class="card">
+
+                          <!--Card image-->
+                          <div class="view overlay">
+                            <img src="{{book.imagen}}" class="card-img-top" alt="">
+                            <a href="#" >
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                          </div>
+
+                          <!--Card content-->
+                          <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">{{book.titulo}}</h4>
+                            <!--Text-->
+                            <p class="card-text">{{book.descripcion}}.</p>
+                            <a href="#" class="btn btn-purple btn-md">Modificar
+                                <i class="fa fa-pencil ml-2"></i>
+                            </a>
+                            <a href="#" class="btn btn-purple btn-md">Eliminar
+                                <i class="fa fa-trash ml-2"></i>
+                            </a>
+                          </div>
+
+                      </div>
+                      <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+
+
+            </section>
+            <!--Section: Cards-->
+
+        </div>
+
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+</body>
+
+</html>

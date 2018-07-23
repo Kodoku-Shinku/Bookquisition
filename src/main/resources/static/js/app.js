@@ -5,10 +5,12 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
       controller: "MainController",
       templateUrl: "templates/home.html"
     })
+  
         .when("/elements",{
       controller: "MainController",
       templateUrl: "templates/home.html"
     })
+  
     .when("/post/:titulo",{
        controller: "PostController",
        templateUrl: "templates/post.html"
@@ -34,6 +36,15 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
       controller: "NewPostController",
       templateUrl: "templates/post_form.html"
     })
-      .otherwise({redirectTo:"/"});
-});
+    .when("/",{
+      controller: "MainController",
+      templateUrl: "libro.html"
+    })
 
+    .when("/post/:titulo",{
+       controller: "PostController",
+       templateUrl: "libro.html"
+    })
+      .otherwise({redirectTo:"/"});
+
+});
