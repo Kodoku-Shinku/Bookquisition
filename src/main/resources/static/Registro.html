@@ -394,7 +394,7 @@
                     <label for="checkbox1" class="form-check-label dark-grey-text">Acepto terminos y condiciones</label>
                   </fieldset>
                   <hr>
-                  <input type="submit" id="regis" onclick="agregaUsuario()" class="btn btn-purple" value="Registrate">
+                  <input type="submit" id="regis" onclick="agregaUsuario()" class="btn btn-purple" value="Registrate" disabled="true">
                 </div>
 
 
@@ -461,10 +461,13 @@ new WOW().init();
     	    	xmlhttp.setRequestHeader('Content-type','application/json');
     	    	xmlhttp.send(JSON.stringify({nombre:nombre,apellido:apellidos,correo:email,contrasena:contrasena,nombreUsuario:nombreUsuario,pais:pais}));
 
+            alert("Se ha registrado!");
+
+
     	    }
           function deshabilita(){
             var x = document.getElementById('checkbox1').checked;
-            console.log(x);
+            //console.log(x);
               if(document.getElementById('checkbox1').checked){
                   document.getElementById('regis').disabled=false;
               }else{
