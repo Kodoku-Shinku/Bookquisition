@@ -61,7 +61,7 @@
                       <!--subir una imagen ..........................................-->
                       <form enctype="multipart/form-data" action="uploader1.php" method="POST">
                         <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
-                        <input name="uploadedfile" type="file" onchange="cargarImagen(files[0])"/>
+                        <input name="uploadedfile" type="file" accept=".jpg, .jpeg, .png"  onchange="cargarImagen(files[0])"/>
                         <label  id ="#singleFileUploadError"></label>
                         <label  id ="#singleFileUploadSuccess"></label>
                       </form>
