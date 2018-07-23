@@ -9,6 +9,10 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PostController",
        templateUrl: "templates/post.html"
     })
+    .when("/perfil",{
+       controller: "PerfilController",
+       templateUrl: "perfil.html"
+    })
     .when("/posts/new",{
       controller: "NewPostController",
       templateUrl: "templates/post_form.html"

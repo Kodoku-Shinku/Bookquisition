@@ -3,111 +3,108 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--librerias-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<!--librerias-->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"	rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- JQuery -->
+<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<!-- Custom styles for this template -->
+<link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
- <!--angular-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.4.0-beta.5/angular-resource.min.js"></script>
- 	<script src="https://code.angularjs.org/1.4.0-beta.5/angular-route.min.js"></script>
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
- 	<script src="js/app.js"></script>
- 	<script src="js/services.js"></script>
- 	<script src="js/controllers.js"></script>
-  <!--angula-->
+<!--Angular-->
+<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+<script	src="https://code.angularjs.org/1.4.0-beta.5/angular-resource.min.js"></script>
+<script	src="https://code.angularjs.org/1.4.0-beta.5/angular-route.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<!--Angula-->
+<!--Gmail login-->
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+<meta name="google-signin-client_id"content="1069883673015-62kc46mpgc1djpd32fo6phncah7invh5.apps.googleusercontent.com">
+<script src="GmailLoginFunctions.js" type="text/javascript"></script>
+<!--Gmail Login-->
+
+<title>Bookquisition</title>
+
 </head>
-
 <body>
-  <div class="pos-f-t">
+	<div class="pos-f-t">
+		<nav class="navbar navbar-dark bg-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				id="nav-toggle" aria-controls="navbarToggleExternalContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-  <nav class="navbar navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" id="nav-toggle" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+			<form class="form-inline my-2 my-lg-0 ml-auto">
+				<div class="md-form my-0">
+					<input class="form-control mr-sm-2" type="text"	placeholder="Titulo de libro.." aria-label="Search" ng-model="post.titulo">
+				</div>
+				<a href="#/post/{{post.titulo}}">
+					<button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3">Buscar</button>
+				</a>
+				<button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" onclick="cerrarSesion()">Salir</button>
+			</form>
+		</nav>
+	</div>
 
-      </button>
+	<div id="wrapper">
 
-      <form class="form-inline my-2 my-lg-0 ml-auto">
-          <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" ng-model="post.titulo">
-          </div>
-          <a href="#/post/{{post.titulo}}"><button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" >Search</button></a>
-      </form>
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand"><a href="#"> BookXchange </a></li>
+				
+				<li><a href="#/perfil">Perfil</a></li>
+								
+				<li><a href="Biblioteca.html" target="principal">Biblioteca</a>
+				</li>
+				<li><a href="Biblioteca.html" target="principal">Solicitudes</a>
+				</li>
+				<li><a href="Biblioteca.html" target="principal">Intercambios</a>
+				</li>
+				<li><a href="index.html">salir</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
 
-  </nav>
-</div>
+		<!-- Page Content -->
 
-    <div id="wrapper">
+		<div ng-view></div>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        BookXchange
-                    </a>
-                </li>
-                <li>
-                    <a href="perfil.html" target="principal">Perfil</a>
-                </li>
-                <li>
-                    <a href="Biblioteca.html" target="principal">Biblioteca</a>
-                </li>
-                <li>
-                    <a href="Biblioteca.html" target="principal">Solicitudes</a>
-                </li>
-                <li>
-                    <a href="Biblioteca.html" target="principal">Intercambios</a>
-                </li>
-                <li>
-                    <a href="index.html">salir</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
+		<!-- /#page-content-wrapper -->
 
-        <div ng-view> </div>
+	</div>
+	<!-- /#wrapper -->
 
-        <!-- /#page-content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#nav-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#nav-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
 
 </body>
 
