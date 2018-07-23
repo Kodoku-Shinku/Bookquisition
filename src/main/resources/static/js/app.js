@@ -5,12 +5,12 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
       controller: "MainController",
       templateUrl: "templates/home.html"
     })
-  
+
         .when("/elements",{
       controller: "MainController",
       templateUrl: "templates/home.html"
     })
-  
+
     .when("/post/:titulo",{
        controller: "PostController",
        templateUrl: "templates/post.html"
@@ -25,13 +25,13 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
     })
     .when("/biblioteca",{
        controller: "BiblioController",
-       templateUrl: "Biblioteca.html"
+       templateUrl: "libro.html"
     })
         .when("/agregarLibro",{
        controller: "AddLibroController",
        templateUrl: "agregarLibro.html"
-    })    
-    
+    })
+
     .when("/posts/new",{
       controller: "NewPostController",
       templateUrl: "templates/post_form.html"
