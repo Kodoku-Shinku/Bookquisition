@@ -36,7 +36,12 @@
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title" id="nombreUsuario" class="text-center">
-              <strong>Nombre Usuario</strong></h3>
+              <br>
+              <strong>PERFIL DE USUARIO: </strong></h3>
+  
+                      <img class="img-fluid" ng-src="{{perfilGmail.getImageUrl()}}" alt="avatar">
+   
+              <br>                           
             </div>
             <div class="panel-body">
               <div class="row">
@@ -48,13 +53,13 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>NOMBRE</td>
-                        <td><p id="nombre">Nombre</p></td>
+                        <td>USUARIO</td>
+                        <td><p id="nombre">{{perfilGmail.getGivenName()}}</p></td>
                       </tr>
 
                       <tr>
-                        <td>APELLIDOS</td>
-                        <td><p id="apellidos">Apellidos</p></td>
+                        <td>NOMBRE</td>
+                        <td><p id="apellidos">{{perfilGmail.getName()}}</p></td>
                       </tr>
 
 
@@ -65,12 +70,12 @@
 
                       <tr>
                         <td>CORREO</td>
-                        <td><p id="email">Email</p></td>
+                        <td><p id="email">{{perfilGmail.getEmail()}}</p></td>
                       </tr>
 
                     </tbody>
                   </table>
-                    <a href="editarPerfil.html" class="btn btn-primary">Editar Perfil</a>
+                    <a href="#/editarPerfil" class="btn btn-primary">Editar Perfil</a>
                 </div>
               </div>
             </div>
