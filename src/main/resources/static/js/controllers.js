@@ -11,6 +11,13 @@ angular.module("Bookquisition")
 .controller("PerfilController",function($scope, $resource, $routeParams){
     $scope.perfilGmail = getUsuario();
 })
+.controller("BiblioController",function($scope, $resource, $routeParams){
+
+})
+.controller("AddLibroController",function($scope, $resource, $routeParams){
+
+})
+
 .controller("NewPostController",function($scope, $resource){
     Post = $resource("/libros/:titulo", {titulo: "@titulo"});
     $scope.post = {};
