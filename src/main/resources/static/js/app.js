@@ -28,11 +28,11 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        templateUrl: "libro.html"
     })
     .when("/solicitudes",{
-       controller: "BiblioController",
+       controller: "SolicitController",
        templateUrl: "biblioteca.html"
     })
     .when("/intercambios",{
-       controller: "BiblioController",
+       controller: "InterController",
        templateUrl: "biblioteca.html"
     })
         .when("/agregarLibro",{
