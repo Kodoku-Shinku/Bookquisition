@@ -27,6 +27,14 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "BiblioController",
        templateUrl: "libro.html"
     })
+    .when("/solicitudes",{
+       controller: "BiblioController",
+       templateUrl: "biblioteca.html"
+    })
+    .when("/intercambios",{
+       controller: "BiblioController",
+       templateUrl: "biblioteca.html"
+    })
         .when("/agregarLibro",{
        controller: "AddLibroController",
        templateUrl: "agregarLibro.html"
