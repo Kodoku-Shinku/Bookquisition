@@ -1,10 +1,6 @@
 angular.module("Bookquisition",["ngRoute", "ngResource"])
 .config(function($routeProvider){
   $routeProvider
-    .when("/",{
-      controller: "MainController",
-      templateUrl: "templates/home.html"
-    })
 
         .when("/elements",{
       controller: "MainController",
@@ -15,7 +11,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PostController",
        templateUrl: "templates/post.html"
     })
-    .when("/perfil",{
+        .when("/perfil",{
        controller: "PerfilController",
        templateUrl: "perfil.html"
     })
@@ -53,6 +49,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PostController",
        templateUrl: "libro.html"
     })
+    
       .otherwise({redirectTo:"/"});
 
 });

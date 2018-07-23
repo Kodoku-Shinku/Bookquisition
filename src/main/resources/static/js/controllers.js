@@ -12,8 +12,8 @@ angular.module("Bookquisition")
     $scope.perfilGmail = getUsuario();
 })
 .controller("BiblioController",function($scope, $resource, $routeParams){
-    Post = $resource("/libros/:titulo", {titulo: "@titulo"});
-    $scope.posts = Post.get({titulo: $routeParams.titulo});
+	  Post = $resource("/libros/:titulo", {titulo: "@titulo"});
+	  $scope.posts = Post.query();
 })
 .controller("SolicitController",function($scope, $resource, $routeParams){
     Post = $resource("/libros/:titulo", {titulo: "@titulo"});
