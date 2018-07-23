@@ -11,7 +11,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PostController",
        templateUrl: "templates/post.html"
     })
-    .when("/perfil",{
+        .when("/perfil",{
        controller: "PerfilController",
        templateUrl: "perfil.html"
     })
