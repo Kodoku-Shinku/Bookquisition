@@ -2,7 +2,7 @@ angular.module("Bookquisition")
 .controller("MainController",function($scope, $resource){
   Post = $resource("/libros/:titulo", {titulo: "@titulo"});
   $scope.posts = Post.query();
-  
+
 })
 .controller("PostController",function($scope, $resource, $routeParams){
     Post = $resource("/libros/:titulo", {titulo: "@titulo"});
@@ -12,7 +12,16 @@ angular.module("Bookquisition")
     $scope.perfilGmail = getUsuario();
 })
 .controller("BiblioController",function($scope, $resource, $routeParams){
-
+    Post = $resource("/libros/:titulo", {titulo: "@titulo"});
+    $scope.posts = Post.get({titulo: $routeParams.titulo});
+})
+.controller("SolicitController",function($scope, $resource, $routeParams){
+    Post = $resource("/libros/:titulo", {titulo: "@titulo"});
+    $scope.posts = Post.get({titulo: $routeParams.titulo});
+})
+.controller("InterController",function($scope, $resource, $routeParams){
+    Post = $resource("/libros/:titulo", {titulo: "@titulo"});
+    $scope.posts = Post.get({titulo: $routeParams.titulo});
 })
 .controller("AddLibroController",function($scope, $resource, $routeParams){
 
