@@ -12,7 +12,7 @@ angular.module("Bookquisition")
     $scope.perfilGmail = getUsuario();
 })
 .controller("NewPostController",function($scope, $resource){
-    Post = $resource("https://bookquisition.herokuapp.com/libros/:titulo", {titulo: "@titulo"});
+    Post = $resource("/libros/:titulo", {titulo: "@titulo"});
     $scope.post = {};
     $scope.savePost = function(){
         Post.save({data : $scope.post})
