@@ -5,6 +5,7 @@ import java.util.List;
 
 import mx.uam.tsis.bookquisition.datos.UsuarioDAO;
 import mx.uam.tsis.bookquisition.datos.UsuarioRepository;
+import mx.uam.tsis.bookquisition.negocio.dominio.Libro;
 import mx.uam.tsis.bookquisition.negocio.dominio.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,26 @@ public class UsuarioService {
 	    	return false;
 	    }
 		
+	}
+	
+	/**
+	 * Agrega un libro a un usuario
+	 * @param correo
+	 * @return true si lo agrega, false si no
+	 */
+	public boolean agregarLibroAUsuario(String correo, Libro libro){
+		Usuario usuario = repository.findByCorreo(correo);
+		if (usuario != null) {
+			if(!usuario.getLibros().contains(libro)) {
+				usuario.getLibros().add(libro);
+				repository.save(usuario);
+				return true;
+			}else {
+				return false;
+			}
+		}else {
+			return false;
+		}
 	}
 	
 }

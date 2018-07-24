@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.uam.tsis.bookquisition.negocio.LibroService;
+import mx.uam.tsis.bookquisition.negocio.UsuarioService;
 import mx.uam.tsis.bookquisition.negocio.dominio.Libro;
 import mx.uam.tsis.bookquisition.negocio.dominio.Usuario;
 
@@ -27,6 +28,8 @@ public class LibroRestController {
 
 	@Autowired
 	private LibroService servicioLibro;
+	@Autowired
+	private UsuarioService servicioUsuario;
 
 	
 	/**
@@ -51,12 +54,25 @@ public class LibroRestController {
     }
     
     
-    @RequestMapping(value="/libros", method = RequestMethod.POST)
-	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro) {
+//    @RequestMapping(value="/libros", method = RequestMethod.POST)
+//	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro) {
+//	    	
+//    	//Invocar addAlumno en el servicio
+//        boolean retorno = servicioLibro.agregarLibro(libro);
+//		if(retorno) {
+//    		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
+//    	} else {
+//    		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
+//    	}
+//	}
+    
+    @RequestMapping(value="/libros/{correo}", method = RequestMethod.PUT)
+	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro, @PathVariable String correo) {
 	    	
     	//Invocar addAlumno en el servicio
         boolean retorno = servicioLibro.agregarLibro(libro);
 		if(retorno) {
+			servicioUsuario.agregarLibroAUsuario(correo, libro);
     		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
     	} else {
     		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
