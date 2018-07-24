@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="Bookquisition">
+<html ng-app="Bookquisition" >
 
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -44,6 +43,9 @@
 <script src="GmailLoginFunctions.js" type="text/javascript"></script>
 <!--Gmail Login-->
 
+
+<script src="funciones.js" ></script>
+
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
@@ -52,13 +54,14 @@
 </script>
 
 
+
 <title>Bookquisition</title>
 
 </head>
 <body>
 
 	<div class="pos-f-t">
-		<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-dark bg-dark fixed-top scrolling-navbar">
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				id="nav-toggle" aria-controls="navbarToggleExternalContent"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +86,7 @@
 		<div id="sidebar-wrapper">
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><a href="#/elements"> BookXchange </a></li>
-
+				<li class="sidebar-brand"><a href="#/elements"> BookXchange </a></li>
 				<li><a href="#/perfil">Perfil</a></li>
 	<li><a href="#/agregarLibro">Agregar Libro</a></li>
 
@@ -102,7 +105,8 @@
 			
         <div id="page-content-wrapper">
         
-            <div class="container-fluid" ng-view>
+            <div class="container-fluid" ng-view>	
+
             </div>
         </div>
 
@@ -121,6 +125,7 @@
 			$("#wrapper").toggleClass("toggled");
 		});
 	</script>
+	
 
 </body>
 
