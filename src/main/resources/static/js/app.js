@@ -50,7 +50,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
     })
     .when("/",{
       controller: "MainController",
-      templateUrl: "libro.html"
+      templateUrl: "home.html"
     })
    
       .otherwise({redirectTo:"/"});
