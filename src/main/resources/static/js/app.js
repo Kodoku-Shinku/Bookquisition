@@ -15,9 +15,17 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PerfilController",
        templateUrl: "perfil.html"
     })
+            .when("/agregarLibro",{
+       controller: "AddBookController",
+       templateUrl: "Biblioteca.html"
+    })
         .when("/editarPerfil",{
        controller: "PerfilController",
        templateUrl: "editarPerfil.html"
+    })
+            .when("/pedirLibro",{
+       controller: "PerfilController",
+       templateUrl: "sendEmail.html"
     })
     .when("/biblioteca",{
        controller: "BiblioController",
@@ -44,12 +52,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
       controller: "MainController",
       templateUrl: "libro.html"
     })
-
-    .when("/post/:titulo",{
-       controller: "PostController",
-       templateUrl: "libro.html"
-    })
-    
+   
       .otherwise({redirectTo:"/"});
 
 });

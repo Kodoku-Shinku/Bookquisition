@@ -16,6 +16,7 @@
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
     <meta name="google-signin-client_id" content="1069883673015-62kc46mpgc1djpd32fo6phncah7invh5.apps.googleusercontent.com">
     <script src="GmailLoginFunctions.js" type="text/javascript"></script>
+    <script src="funciones.js" ></script>
     <!--Gmail login-->
   <!-- Your custom styles (optional) -->
   <link href="css/style.min.css" rel="stylesheet">
@@ -121,7 +122,7 @@
             <div class="card-body">
 
               <!-- Form -->
-              <form name="">
+              
                 <!-- Heading -->
                 <h3 class="dark-grey-text text-center">
                   <strong>Iniciar Sesion</strong>
@@ -137,21 +138,21 @@
 
                 <div class="md-form">
                   <i class="fa fa-key prefix grey-text"></i>
-                  <input type="password" id="contraseña" size="20" maxlengh="20" class="form-control">
+                  <input type="password" id="contrasena" size="20" maxlengh="20" class="form-control">
                   <label for="contraseña">Contraseña</label>
                 </div>
 
 
 
                 <div class="text-center">
-                  <button class="btn btn-purple">Iniciar sesion</button>
+                  <button class="btn btn-purple" onclick="iniciarSesion()">Iniciar sesion</button>
                   <hr>
                 </div>
                 <div class="text-center">
                       <div class="g-signin2" data-onsuccess="iniciarSesion" id="botonSesion"></div>
                 </div>
 
-              </form>
+              
               <!-- Form -->
 
             </div>
@@ -190,6 +191,43 @@
 // Animations initialization
 new WOW().init();
 </script>
+
+<script>
+   function iniciarSesion(){
+	   var correo = document.getElementById("email").value;
+	   var contrasena = document.getElementById("contrasena").value;
+	   console.log(correo+" "+contrasena);
+	    
+       
+       if (correo == "" || contrasena == ""){
+    	   alert("Favor de llenar todos los campos");
+       }else{
+    	   var xmlhttp = new XMLHttpRequest();  
+		   xmlhttp.onreadystatechange = function() {		   
+			   alert(this.readyState+"  "+this.status);
+		   	    if (this.readyState == 4 && this.status == 200) {
+		   	    	
+		   	    	var usuario = this.responseText;
+		   	    	if (usuario != ""){
+		   	    		location.href="http://localhost:8080/bookInicio.html";	
+		   	    	}else{
+		   	    		alert("verificar usuario y contraseña");
+		   	    	}
+		   	    	//console.log(usuario);		   	    	
+		   	        //iniciar(correo);		   	        
+			        		        
+			        
+		   	    }
+	   	    
+			};
+			xmlhttp.open("GET", "/usuario/"+correo+"/"+contrasena, true);
+		    xmlhttp.send();
+		  	   
+       } 
+   }    
+
+</script>
+
 </body>
 
 </html>
