@@ -52,10 +52,10 @@ public class UsuarioRestController {
     }
     
     /**
-     * Metodo para obtener un alumno, mediante el url /alumnos/{matricula}
+     * Metodo para obtener un usuario ,mediante el url /usuario/{nombreUsuario}
      * 
      * 
-     * @param matricula
+     * @param nombreUsuario
      * @return
      */
     @RequestMapping(value="/usuario/{nombreUsuario}", method=RequestMethod.GET)
@@ -63,7 +63,28 @@ public class UsuarioRestController {
         Usuario al = servicioUsuario.dameUsuario(nombreUsuario);
        	return al;
     }
-    
+    /**
+     * Metodo para obtener un usuario, mediante el url /usuario/{correo}/{contrasena}
+     * 
+     * 
+     * @param correo y contraseña
+     * @return
+     */
+    @RequestMapping(value="/usuario/{correo}/{contrasena}", method=RequestMethod.GET)
+    public Usuario buscaUsuario(@PathVariable String correo,@PathVariable String contrasena) {
+        Usuario usuario = servicioUsuario.dameUsuarioCorreo(correo, contrasena);
+        if(usuario != null) {            
+            return usuario;
+        } else {
+            return null;
+        }
+       	
+    }
+    /**
+     * Metodo para eliminar un usuario, mediante el url /usuario/{nombreUsuario}
+     * @param nombreUsuario
+     * @return
+     */
     @RequestMapping(value="/usuario/{nombreUsuario}", method = RequestMethod.DELETE)
     public ResponseEntity<Usuario> eliminarUsuario(@PathVariable String nombreUsuario) {
             System.out.println("metodo delete");
