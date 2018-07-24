@@ -60,6 +60,21 @@ public class UsuarioService {
 		Usuario usuario = repository.findByNombreUsuario(nombreUsuario);
 		return usuario;
 	}
+	
+	/**
+	 * Regresa al usuario con el email 
+	 * @param correo
+	 * @param contrasena
+	 * @return
+	 */
+	public Usuario dameUsuarioCorreo(String correo, String contrasena) {
+		Usuario usuario = repository.findByCorreo(correo);
+		if (usuario != null && usuario.getContrasena().equals(contrasena)){
+			return usuario;
+		}
+		return null;
+
+	}
 
 	
 	public boolean eliminarUsuario(String nombreUsuario) {

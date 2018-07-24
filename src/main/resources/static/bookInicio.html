@@ -44,6 +44,8 @@
 <script src="GmailLoginFunctions.js" type="text/javascript"></script>
 <!--Gmail Login-->
 
+<script src="funciones.js" ></script>
+
 <title>Bookquisition</title>
 
 </head>
@@ -110,6 +112,10 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
+	</script>
+	<script>
+	    var correo = devolverCorreo();
+	    alert("correo "+correo);
 	</script>
 
 </body>
