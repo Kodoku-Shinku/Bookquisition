@@ -88,7 +88,7 @@
 				<li class="sidebar-brand"><a href="#/elements"> BookXchange </a></li>
 				<li class="sidebar-brand"><a href="#/elements"> BookXchange </a></li>
 				<li><a href="#/perfil">Perfil</a></li>
-	<li><a href="#/agregarLibro">Agregar Libro</a></li>
+	<li><a href="#/agregarLibro?correo='emailUser'&contrasena='passUser'">Agregar Libro</a></li>
 
 				<li><a href="#/biblioteca">Biblioteca</a>
 				</li>
@@ -113,6 +113,36 @@
 		<!-- /#page-content-wrapper -->
 
 	</div>
+	
+	<script>
+    /**
+     * Devuelve un array de clave=>valor
+     */
+	    function getGET() {
+	        // captura la url
+	        var loc = document.location.href;
+	        // si existe el simbolo interrogacion
+	        if(loc.indexOf('?')>0) {
+	            // toma la parte de la url que hay despues del interrogante
+	            var getString = loc.split('?')[1];
+	            // obtenemos un array con cada clave=valor
+	            var GET = getString.split('&');
+	            var get = {};
+	            // recorremos todo el array de valores
+	            for(var i = 0, l = GET.length; i < l; i++){
+	                var tmp = GET[i].split('=');
+	                get[tmp[0]] = unescape(decodeURI(tmp[1]));
+	            }
+	            return get;
+	        }
+	    }
+     
+     var valores=getGET();
+     emailUser = valores["correo"];
+     passUser = valores["contrasena"];
+     console.log(emailUser);
+     console.log(passUser);
+    </script>
 
 
 

@@ -1,9 +1,14 @@
 package mx.uam.tsis.bookquisition.negocio.dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entidad del modelo de dominio
@@ -20,6 +25,9 @@ public class Usuario {
 	private String contrasena;
 	private String nombreUsuario;
 	private String pais;
+	
+	@OneToMany(fetch=FetchType.LAZY)
+	private List<Libro> libros=null;
 	
 	/**
 	 * Constructor por default
@@ -100,6 +108,21 @@ public class Usuario {
 	public void setPais (String pais) {
 		this.pais = pais;
 	}
+
+	public List<Libro> getLibros() {
+		if (libros == null) {
+			return libros = new ArrayList<Libro>();
+		}else {
+			return libros;
+		}
+		
+	}
+
+	public void setLibros(List<Libro> libros) {
+		this.libros = libros;
+	}	
+	
+	
 
 
 }

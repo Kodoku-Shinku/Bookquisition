@@ -3,7 +3,9 @@ package mx.uam.tsis.bookquisition.servicios;
 import java.util.Collection;
 import java.util.List;
 
+import mx.uam.tsis.bookquisition.negocio.LibroService;
 import mx.uam.tsis.bookquisition.negocio.UsuarioService;
+import mx.uam.tsis.bookquisition.negocio.dominio.Libro;
 import mx.uam.tsis.bookquisition.negocio.dominio.Usuario;
 
 
@@ -26,6 +28,8 @@ public class UsuarioRestController {
 	
 	@Autowired
 	private UsuarioService servicioUsuario;
+	@Autowired
+	private LibroService servicioLibro;
     
     
   @RequestMapping(value="/usuarios", method = RequestMethod.POST)
