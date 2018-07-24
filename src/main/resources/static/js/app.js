@@ -11,7 +11,7 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        controller: "PostController",
        templateUrl: "templates/post.html"
     })
-        .when("/perfil",{
+        .when("/perfil:pass",{
        controller: "PerfilController",
        templateUrl: "perfil.html"
     })
@@ -44,15 +44,6 @@ angular.module("Bookquisition",["ngRoute", "ngResource"])
        templateUrl: "agregarLibro.html"
     })
 
-    .when("/posts/new",{
-      controller: "NewPostController",
-      templateUrl: "templates/post_form.html"
-    })
-    .when("/",{
-      controller: "MainController",
-      templateUrl: "libro.html"
-    })
-   
-      .otherwise({redirectTo:"/"});
+    ;
 
 });

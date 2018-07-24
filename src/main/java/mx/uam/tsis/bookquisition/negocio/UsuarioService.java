@@ -76,6 +76,14 @@ public class UsuarioService {
 
 	}
 
+	public Usuario dameUsuarioSoloCorreo(String correo) {
+		Usuario usuario = repository.findByCorreo(correo);
+		if (usuario != null){
+			return usuario;
+		}
+		return null;
+
+	}
 	
 	public boolean eliminarUsuario(String nombreUsuario) {
 		System.out.println("AlumnoService remove");

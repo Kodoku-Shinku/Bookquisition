@@ -4,13 +4,27 @@ angular.module("Bookquisition")
   $scope.posts = Post.query();
 
 })
+
 .controller("PostController",function($scope, $resource, $routeParams){
     Post = $resource("/libros/:titulo", {titulo: "@titulo"});
     $scope.posts = Post.get({titulo: $routeParams.titulo});
 })
-.controller("PerfilController",function($scope, $resource, $routeParams){
-    $scope.perfilGmail = getUsuario();
+
+
+.controller("PerfilController",function($scope, $resource, $routeParams, $http){
+	 $scope.perfil;
+	 
+	 console.log($routeParams.pass);
+	 
+	$http.get("/usuario/danyelcrz")
+		.success(function(data) {
+			 $scope.perfil = data;
+		})
+		.error(function(err) {			
+		});
 })
+
+
 .controller("AddBookController",function($scope, $resource, $routeParams){
    
 })

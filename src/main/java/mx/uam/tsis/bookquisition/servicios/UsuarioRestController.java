@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 /*
  * Controlador para el API rest
  * 
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class UsuarioRestController {
 	
@@ -78,8 +80,8 @@ public class UsuarioRestController {
         } else {
             return null;
         }
-       	
     }
+    
     /**
      * Metodo para eliminar un usuario, mediante el url /usuario/{nombreUsuario}
      * @param nombreUsuario

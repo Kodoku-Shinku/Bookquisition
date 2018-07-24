@@ -1,3 +1,6 @@
+var emailUser;
+var passUser;
+
 function iniciarSesion(googleUser) {
 	var profile = googleUser.getBasicProfile();
 	window.location.replace("bookInicio.html");
