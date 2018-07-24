@@ -147,8 +147,7 @@
       	
   	var xmlhttp = new XMLHttpRequest();
 		
-	//xmlhttp.open("POST", "/libros", true);
-	xmlhttp.open("PUT", "/libros/"+emailUser, true);
+	xmlhttp.open("POST", "/libros", true);
 	xmlhttp.setRequestHeader('Content-type', 'application/json; charset= utf-8');
 	xmlhttp.send(JSON.stringify(libro));  
 	

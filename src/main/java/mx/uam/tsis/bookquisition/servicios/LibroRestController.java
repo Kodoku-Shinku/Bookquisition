@@ -54,17 +54,17 @@ public class LibroRestController {
     }
     
     
-//    @RequestMapping(value="/libros", method = RequestMethod.POST)
-//	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro) {
-//	    	
-//    	//Invocar addAlumno en el servicio
-//        boolean retorno = servicioLibro.agregarLibro(libro);
-//		if(retorno) {
-//    		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
-//    	} else {
-//    		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
-//    	}
-//	}
+    @RequestMapping(value="/libros", method = RequestMethod.POST)
+	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro) {
+	    	
+    	//Invocar addAlumno en el servicio
+        boolean retorno = servicioLibro.agregarLibro(libro);
+		if(retorno) {
+    		return new ResponseEntity<Libro>(libro, HttpStatus.CREATED);
+    	} else {
+    		return new ResponseEntity<Libro>(libro, HttpStatus.BAD_REQUEST);
+    	}
+	}
     
     @RequestMapping(value="/libros/{correo}", method = RequestMethod.PUT)
 	public ResponseEntity<Libro> agregarLibro(@RequestBody Libro libro, @PathVariable String correo) {
